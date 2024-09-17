@@ -1,5 +1,5 @@
 # Use a newer Python version (recommended 3.9+)
-FROM python:3.9-slim-buster
+FROM python:3.8-slim-buster
 
 # Install AWS CLI and update packages
 RUN apt update -y && apt install awscli -y
