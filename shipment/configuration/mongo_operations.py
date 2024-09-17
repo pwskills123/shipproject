@@ -8,13 +8,13 @@ from pymongo import MongoClient
 from shipment.constant import DB_URL
 from shipment.exception import shippingException
 from shipment.logger import logging
-
+import ssl
 
 
 class MongoDBOperation:
     def __init__(self):
         self.DB_URL = DB_URL
-        self.client = MongoClient(self.DB_URL)
+        self.client = MongoClient(self.DB_URL,tls=True, tlsAllowInvalidCertificates=True)
 
     def get_database(self, db_name) -> Database:
 

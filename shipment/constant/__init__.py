@@ -2,6 +2,10 @@ import os
 from os import environ
 from datetime import datetime
 from from_root.root import from_root
+from dotenv import load_dotenv
+
+# Load environment variables from .env file (if it exists)
+load_dotenv()
 
 TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 
@@ -10,6 +14,7 @@ SCHEMA_FILE_PATH = "config/schema.yaml"
 
 DB_URL = os.getenv("MONGO_DB_URL")
 
+# DB_URL = "mongodb+srv://imran:TdPLW9Ad0OzpSSD2@cluster0.fv0lm61.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 TARGET_COLUMN = "Cost"
 DB_NAME = "shipmentdata"
 COLLECTION_NAME = "ship"
@@ -40,7 +45,7 @@ MODEL_FILE_NAME = "shipping_price_model.pkl"
 MODEL_SAVE_FORMAT = ".pkl"
 
 
-BUCKET_NAME = "shipment-model-io-files"
+BUCKET_NAME = "shipment-model-io-files-im"
 S3_MODEL_NAME = "shipping_price_model.pkl"
 
 
